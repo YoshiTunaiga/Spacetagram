@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.css";
-import { secretAPI } from "../../secret";
 
 export default function Home() {
   const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=4HKjDzdrpgxGpmLGXxnbxWaVjggCrTnKLUnC44o0`;
