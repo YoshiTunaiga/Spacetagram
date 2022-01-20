@@ -35,9 +35,12 @@ p {
 
 .like-btn {
   position: absolute;
-  padding: 0 10px 0 20px;
   right: 30%;
+  padding: 30px;
   transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  background-color: #fafafa;
 }
 
 .astro-blob .full-name {
@@ -46,26 +49,35 @@ p {
   font-size: 20px;
 }
 
-.like-btn .fa-heart-o {
+.like-btn {
   /* width: 70px;
   height: 70px; */
-  background-position: left;
+  /* background-position: left;
   background-size: 2900%;
   position: absolute;
   top: 50%;
   left: 21%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
-.like-btn .fa-heart-o-active {
+.like-btn i {
+  font-size: 1rem;
+  transition: 0.4s;
+}
+/* .like-btn .fa-heart-o-active {
   border-color: #f9b9c4;
   background: #fbd0d8;
+} */
+
+.like-btn:hover i {
+  color: red;
+  /* background-position: right;
+  animation: animate 0.8s steps(28) 1; */
 }
 
-.fa-heart-o:hover {
-  color: red;
-  background-position: right;
-  animation: animate 0.8s steps(28) 1;
+.fas {
+  color: #f50057;
+  transform: 0.4s;
 }
 
 @keyframes animate {

@@ -4,7 +4,7 @@ import "./Home.css";
 import { secretAPI } from "../../secret";
 
 export default function Home() {
-  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${secretAPI}`;
+  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=4HKjDzdrpgxGpmLGXxnbxWaVjggCrTnKLUnC44o0`;
 
   const [astroEvents, setastroEvents] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -21,10 +21,16 @@ export default function Home() {
   console.log("Here is Astro:", astroEvents);
   console.log(liked);
   const btnClick = (i) => {
-    if (!astroEvents[i].liked) {
+    const btn = document.getElementById(i);
+    if (btn.classList.contains("fa-heart-o")) {
       astroEvents[i].liked = true;
+      btn.classList.remove("fa-heart-o");
+      btn.classList.add("fa-heart");
     }
-    astroEvents[i].liked = false;
+    // if (!astroEvents[i].liked) {
+    //   astroEvents[i].liked = true;
+    // }
+    // astroEvents[i].liked = false;
     console.log(astroEvents[i].liked);
   };
   /*   ------------ ASTRO MINI ITEMS COMPONENT --------------------- */
@@ -40,13 +46,12 @@ export default function Home() {
           <p>Somewhere on Mars, there is this thing.</p>
           <span>Earth Date: {astro.earth_date}</span>
           <br />
-          <button className="like-btn" onClick={() => btnClick(i)}>
-            <i
-              className={!astro.liked ? "fa fa-heart-o" : "fa fa-heart"}
-              aria-hidden="true"
-            ></i>{" "}
-            Like
-          </button>
+          <div className="like-btn">
+            <i id={i} className="fa fa-heart-o">
+              {" "}
+              LIKE
+            </i>
+          </div>
         </div>
       </div>
     ));
